@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Longitud propia
+L0 = 126
+
+# Velocidades como fracción de c
+v_c = np.linspace(0, 0.99, 100)
+
+# Calculamos la longitud aparente
+L = L0 * np.sqrt(1 - v_c**2)
+
+# Crear la gráfica
+plt.figure(figsize=(10, 6))
+plt.plot(v_c, L, label='Longitud aparente (L)', color='blue')
+plt.title('Longitud aparente de la nave en función de su velocidad')
+plt.xlabel('Velocidad (v/c)')
+plt.ylabel('Longitud aparente (metros)')
+plt.axhline(y=L0, color='r', linestyle='--', label='Longitud propia (L0 = 126 m)')
+plt.legend()
+plt.grid()
+plt.show()
